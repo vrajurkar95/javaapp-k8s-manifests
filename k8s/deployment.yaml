@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: javaapp-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: javaapp
+  template:
+    metadata:
+      labels:
+        app: javaapp
+    spec:
+      containers:
+        - name: javaapp
+          image: 842108/javaapp:latest   # Jenkins will update this line
+          ports:
+            - containerPort: 8080
