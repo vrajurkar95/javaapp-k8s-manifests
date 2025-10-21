@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: java
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/vrajurkar95/javaapp-k8s-manifests.git
+    targetRevision: main
+    path: k8s    # ✅ Only 'k8s', not 'javaapp-k8s-manifests/k8s/'
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
