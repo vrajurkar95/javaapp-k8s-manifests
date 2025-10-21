@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: javaapp
+  namespace: argocd          # Argo CD must be installed in this namespace
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/vrajurkar95/javaapp-k8s-manifests.git
+    targetRevision: HEAD     # You can change to 'main' or specific branch if needed
+    path: .                  # Root folder (change if manifests are inside a subfolder)
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default       # Target namespace to deploy app
+
+  syncPolicy:
+    automated:               # Enables auto-sync when Git repo changes
+      prune: true            # Deletes resources not defined in Git
+      selfHeal: true         # Restores changes made manually in cluster
+    syncOptions:
+      - CreateNamespace=true # Automatically create namespace if missing
