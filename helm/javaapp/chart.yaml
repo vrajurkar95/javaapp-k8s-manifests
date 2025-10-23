@@ -1,1 +1,7 @@
+apiVersion: v2
+name: javaapp
+description: A simple Helm chart for deploying the Java web app
+type: application
+version: 1.0.0
+appVersion: "1.0"
 
