@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: javaapp
+  name: vaibhav
   namespace: argocd          # Argo CD must be installed in this namespace
 spec:
   project: default
