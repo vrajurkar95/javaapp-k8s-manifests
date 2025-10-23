@@ -3,7 +3,7 @@ replicaCount: 1
 
 image:
   repository: 842108/javaapp
-  tag: 20251023-1551
+  tag: 20251023-1556
   pullPolicy: IfNotPresent
 
 service:
