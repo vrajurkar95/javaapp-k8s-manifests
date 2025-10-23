@@ -1,1 +1,19 @@
 
+replicaCount: 1
+
+image:
+  repository: javaapp           # Updated dynamically by Jenkins
+  tag: latest                   # Will be replaced by Jenkins
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 8080
+  targetPort: 8080
+  nodePort: 30080               # Optional static port
+
+resources: {}
+
+nodeSelector: {}
+tolerations: []
+affinity: {}
