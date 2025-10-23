@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/vrajurkar95/javaapp-k8s-manifests.git
     targetRevision: HEAD
-    path: helm/javaapp
+    path: helm/argocd
     helm:
       valueFiles:
         - values.yaml
