@@ -2,8 +2,8 @@
 replicaCount: 1
 
 image:
-  repository: javaapp           # Updated dynamically by Jenkins
-  tag: latest                   # Will be replaced by Jenkins
+  repository: 842108/javaapp
+  tag: 20251023-1551
   pullPolicy: IfNotPresent
 
 service:
