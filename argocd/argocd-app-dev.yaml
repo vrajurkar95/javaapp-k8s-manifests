@@ -1,4 +1,3 @@
-
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -6,16 +5,19 @@ metadata:
   namespace: argocd
 spec:
   project: default
+
   source:
     repoURL: https://github.com/vrajurkar95/javaapp-k8s-manifests.git
-    targetRevision: HEAD
-    path: helm/argocd
+    targetRevision: main
+    path: helm/javaapp        # ✅ Corrected path
     helm:
       valueFiles:
         - values.yaml
+
   destination:
     server: https://kubernetes.default.svc
     namespace: default
+
   syncPolicy:
     automated:
       prune: true
