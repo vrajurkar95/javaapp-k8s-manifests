@@ -1,1 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "javaapp.fullname" . }}
+  labels:
+    app: {{ include "javaapp.name" . }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}
+      nodePort: {{ .Values.service.nodePort }}
+  selector:
+    app: {{ include "javaapp.name" . }}
 
