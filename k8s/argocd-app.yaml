@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: Qualtro
+  name: qualtro
   namespace: argocd          # Argo CD must be installed in this namespace
 spec:
   project: default
