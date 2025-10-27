@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: javaapp-deployment
 spec:
-  replicas: 2
+  replicas: 4
   revisionHistoryLimit: 1
   selector:
     matchLabels:
